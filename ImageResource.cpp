@@ -43,6 +43,7 @@ ImageResource::ImageResource(std::string fileName)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 }
 
+
 ImageResource::~ImageResource()
 {
     glDeleteTextures(1, &_id);

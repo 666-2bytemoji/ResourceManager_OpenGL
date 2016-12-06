@@ -19,6 +19,14 @@ FontResource::~FontResource()
 }
 
 
+void FontResource::DeleteDefaultFont()
+{
+    _defaultFont->Clear();
+    if (_defaultFont != nullptr)
+        _defaultFont = nullptr;
+}
+
+
 void FontResource::SetDefaultType(std::string ttfFilePath, int fontSize)
 {
     //フォント読み込み
@@ -28,5 +36,9 @@ void FontResource::SetDefaultType(std::string ttfFilePath, int fontSize)
 
 void FontResource::Clear()
 {
+    if (_fontType == nullptr)
+        return;
+    
     TTF_CloseFont(_fontType);
+    _fontType = nullptr;
 }

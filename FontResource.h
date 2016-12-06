@@ -18,6 +18,7 @@ public:
 
     void Clear();
     
+    static void DeleteDefaultFont();
     static void SetDefaultType(std::string ttfFilePath, int fontSize = 16);
     static std::shared_ptr<FontResource> GetDefaultType() { return _defaultFont; }
     

@@ -2,7 +2,6 @@
 #define ImageResource_h
 
 #include "Resource.h"
-#include "lodepng.h"
 #include <vector>
 #include <OpenGL/gl.h>
 
@@ -16,8 +15,19 @@ public:
     int GetWidth() const { return _width; }
     int GetHeight() const { return _height; }
     
+    enum class ImageFormat
+    {
+        PNG,
+        JPEG,
+        BMP,
+        
+        NONE
+    };
+    
 private:
 
+    ImageFormat _format;
+    
     GLuint _id;
     int _width;
     int _height;

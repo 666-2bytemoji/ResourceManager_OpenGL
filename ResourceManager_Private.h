@@ -124,7 +124,7 @@ void ResourceManager<T>::Refresh()
     
     for (size_t i = 0; i < _resourceTable.size(); ++i)
     {
-        if (_resourceTable[i] == _empty)
+        if (_resourceTable[i].get() == nullptr)
             continue;
         
         //empty以外を追加する
@@ -150,6 +150,10 @@ void ResourceManager<T>::Clear()
         
         Remove(_resourceTable[i].get()->GetName());
     }
+    
+    _resourceTable.clear();
+    _resourceTable.resize(0);
+    _nameMap.clear();
 }
 
 

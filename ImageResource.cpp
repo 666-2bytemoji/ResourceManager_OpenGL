@@ -1,4 +1,4 @@
-#include "ImageResource.h"
+  #include "ImageResource.h"
 #include "lodepng.h"
 #include "loadbmp.h"
 #include "loadjpeg.h"
